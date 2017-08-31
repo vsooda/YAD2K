@@ -186,7 +186,7 @@ def _main(args):
                 padding=padding))(prev_layer)
 
             if batch_normalize:
-                conv_layer = (BatchNormalization(
+                conv_layer = (BatchNormalization(epsilon=0.00001,
                     weights=bn_weight_list))(conv_layer)
             prev_layer = conv_layer
 
